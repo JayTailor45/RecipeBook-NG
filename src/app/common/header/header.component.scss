@@ -1,0 +1,26 @@
+.site-header {
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  #brand-head {
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  #brand-name {
+    margin-left: 16px;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+  a {
+    color: #999;
+    transition: 'ease-in-out color .15s';
+    transition-property: color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+  }
+  a:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+}
