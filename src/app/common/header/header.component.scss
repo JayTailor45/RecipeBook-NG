@@ -1,6 +1,6 @@
 .site-header {
   background-color: rgba(0, 0, 0, 0.85);
-  backdrop-filter: saturate(180%) blur(20px);
+//   backdrop-filter: saturate(180%) blur(20px);
   #brand-head {
     color: white;
     font-size: 1.5em;
@@ -13,11 +13,12 @@
   }
   a {
     color: #999;
-    transition: 'ease-in-out color .15s';
+    transition: ease-in-out color .15s;
     transition-property: color;
     transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
+    text-decoration: none;
   }
   a:hover {
     color: #fff;

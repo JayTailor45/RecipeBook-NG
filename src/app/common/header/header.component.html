@@ -1,12 +1,12 @@
 <nav class="sticky-top py-1 site-header">
   <div class="container d-flex flex-column flex-md-row">
-    <a class="p-2">
+    <a class="p-2" [routerLink]="['/']">
       <fa-icon id="brand-head" [icon]="['fas', 'cookie-bite']"></fa-icon>
       <span class="py-3" id="brand-name">
         Recipe Book
       </span>
     </a>
-    <a class="py-3 d-none d-md-inline-block">
+    <a class="py-3 d-none d-md-inline-block" [routerLink]="['/category']">
       Category
     </a>
   </div>
