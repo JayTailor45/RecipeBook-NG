@@ -12,9 +12,10 @@ import { HeaderComponent } from "./common/header/header.component";
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './common/footer/footer.component';
+import { JumbotronComponent } from './common/jumbotron/jumbotron.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, FooterComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, FooterComponent, JumbotronComponent],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [RouterModule],
   bootstrap: [AppComponent]
