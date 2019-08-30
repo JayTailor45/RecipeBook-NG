@@ -14,9 +14,10 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { JumbotronComponent } from './common/jumbotron/jumbotron.component';
 import { CategoryComponent } from './category/category.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, FooterComponent, JumbotronComponent, CategoryComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, FooterComponent, JumbotronComponent, CategoryComponent, LoginComponent],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [RouterModule],
   bootstrap: [AppComponent]
