@@ -16,6 +16,8 @@
       id="inputEmail"
       class="form-control"
       placeholder="Email address"
+      name="email"
+      [(ngModel)]="creds.email"
     />
     <div class="input-group-append">
       <span class="input-group-text" id="basic-addon2">@gmail.com</span>
@@ -28,14 +30,20 @@
       id="inputPassword"
       class="form-control"
       placeholder="Password"
+      name="password"
+      [(ngModel)]="creds.password"
     />
   </div>
+
+  <div class="alert alert-danger" *ngIf="creds.error">{{creds.errorMessage}}</div>
 
   <!-- <div class="checkbox mb-3">
     <label> <input type="checkbox" value="remember-me" /> Remember me </label>
   </div> -->
-  <button class="btn btn-lg btn-light btn-block" type="submit">
-    Sign in
+  <button class="btn btn-lg btn-light btn-block" (click)="login()">
+      <span class="spinner-border spinner-border-sm p-2" role="status" [hidden]="creds.isLoading"></span>
+      <span [hidden]="!creds.isLoading"> Login </span>
+      <span [hidden]="creds.isLoading"> Loading... </span>
   </button>
   <!-- <p class="mt-5 mb-3 text-muted text-center">© 2019</p> -->
 </form>
