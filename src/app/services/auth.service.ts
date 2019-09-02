@@ -13,13 +13,10 @@ export class AuthService {
 
   constructor(private afAuth: AngularFireAuth, private router: Router) {
     this.user = afAuth.authState;
-    
-
     this.user.subscribe(
       (user) => {
         if (user) {
           this.userDetails = user;
-          console.log(this.userDetails);
         }
         else {
           this.userDetails = null;
@@ -31,7 +28,7 @@ export class AuthService {
   login(email, password) {
     this.afAuth.auth.signInWithEmailAndPassword(email + '@gmail.com', password)
     .then(result => {
-      console.log(result)
+      this.router.navigate(['/']);
     })
     .catch((error) => {
       console.log(error);

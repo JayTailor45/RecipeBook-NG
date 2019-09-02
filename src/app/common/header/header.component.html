@@ -9,8 +9,11 @@
     <a class="py-3 p-2 d-none d-md-inline-block" [routerLink]="['/categories']">
       Category
     </a>
-    <a class="py-3 p-2 d-none d-md-inline-block" [routerLink]="['/login']">
+    <a class="py-3 p-2 d-none d-md-inline-block" [routerLink]="['/login']" *ngIf="!this.authService.isLoggedIn()">
       Login
+    </a>
+    <a class="py-3 p-2 d-none d-md-inline-block" *ngIf="this.authService.isLoggedIn()" (click)="this.authService.logout()">
+      Logout
     </a>
   </div>
 </nav>

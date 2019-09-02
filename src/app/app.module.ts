@@ -19,6 +19,7 @@ import { JumbotronComponent } from './common/jumbotron/jumbotron.component';
 import { CategoryComponent } from './category/category.component';
 import { LoginComponent } from './login/login.component';
 import { environment } from 'src/environments/environment';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { environment } from 'src/environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     FormsModule,
+    AuthGuardService
   ],
   providers: [RouterModule],
   bootstrap: [AppComponent]
