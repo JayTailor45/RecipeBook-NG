@@ -20,6 +20,7 @@ import { CategoryComponent } from './category/category.component';
 import { LoginComponent } from './login/login.component';
 import { environment } from 'src/environments/environment';
 import { AuthGuardService } from './services/auth-guard.service';
+import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { AuthGuardService } from './services/auth-guard.service';
     FooterComponent, 
     JumbotronComponent, 
     CategoryComponent, 
-    LoginComponent
+    LoginComponent, PageNotFoundComponent
   ],
   imports: [
     BrowserModule, 
