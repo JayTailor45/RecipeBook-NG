@@ -4,6 +4,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
 import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import {
   FontAwesomeModule,
@@ -46,7 +51,12 @@ import { RecipeAddEditModalComponent } from './common/recipe-add-edit-modal/reci
     AngularFireAuthModule,
     FormsModule,
     AuthGuardService,
-    NgbModalModule
+    NgbModalModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatDatepickerModule
   ],
   entryComponents : [
     RecipeAddEditModalComponent

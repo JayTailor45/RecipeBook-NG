@@ -7,9 +7,22 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class RecipeAddEditModalComponent implements OnInit {
   @Input() obj;
+  step = 0;
   constructor(public modal: NgbActiveModal) { }
 
   ngOnInit() {
+  }
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
   }
 
 }
