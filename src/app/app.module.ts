@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
+import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap";
 
 import {
   FontAwesomeModule,
@@ -21,6 +22,8 @@ import { LoginComponent } from './login/login.component';
 import { environment } from 'src/environments/environment';
 import { AuthGuardService } from './services/auth-guard.service';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RecipeAddEditModalComponent } from './common/recipe-add-edit-modal/recipe-add-edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { PageNotFoundComponent } from './common/page-not-found/page-not-found.co
     FooterComponent, 
     JumbotronComponent, 
     CategoryComponent, 
-    LoginComponent, PageNotFoundComponent
+    LoginComponent, 
+    PageNotFoundComponent, 
+    DashboardComponent, 
+    RecipeAddEditModalComponent
   ],
   imports: [
     BrowserModule, 
@@ -39,7 +45,11 @@ import { PageNotFoundComponent } from './common/page-not-found/page-not-found.co
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     FormsModule,
-    AuthGuardService
+    AuthGuardService,
+    NgbModalModule
+  ],
+  entryComponents : [
+    RecipeAddEditModalComponent
   ],
   providers: [RouterModule],
   bootstrap: [AppComponent]

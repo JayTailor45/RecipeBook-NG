@@ -6,11 +6,17 @@
         Recipe Book
       </span>
     </a>
+    <a class="py-3 p-2 d-none d-md-inline-block" [routerLink]="['/dashboard']">
+      Dashboard
+    </a>
     <a class="py-3 p-2 d-none d-md-inline-block" [routerLink]="['/categories']">
       Category
     </a>
     <a class="py-3 p-2 d-none d-md-inline-block" [routerLink]="['/login']" *ngIf="!this.authService.isLoggedIn()">
       Login
+    </a>
+    <a class="py-3 p-2 d-none d-md-inline-block" *ngIf="this.authService.isLoggedIn()" (click)="this.open()">
+      Add recipe
     </a>
     <a class="py-3 p-2 d-none d-md-inline-block" *ngIf="this.authService.isLoggedIn()" (click)="this.authService.logout()">
       Logout
