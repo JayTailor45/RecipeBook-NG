@@ -9,7 +9,7 @@ export const environment = {
     authDomain: "recipebook-e9605.firebaseapp.com",
     databaseURL: "https://recipebook-e9605.firebaseio.com",
     projectId: "recipebook-e9605",
-    storageBucket: "",
+    storageBucket: "recipebook-e9605.appspot.com",
     messagingSenderId: "819295941785",
     appId: "1:819295941785:web:de3c587d71eb107b"
   }
