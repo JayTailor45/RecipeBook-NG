@@ -28,7 +28,7 @@
         </mat-form-field>
 
         <mat-action-row>
-          <button mat-button color="primary" (click)="nextStep()">Next</button>
+          <button class="btn btn-outline-success btn-sm" (click)="nextStep()">Next</button>
         </mat-action-row>
       </mat-expansion-panel>
 
@@ -49,8 +49,8 @@
         </mat-form-field>
 
         <mat-action-row>
-          <button mat-button color="warn" (click)="prevStep()">Previous</button>
-          <button mat-button color="primary" (click)="nextStep()">Next</button>
+          <button class="btn btn-light btn-sm" (click)="prevStep()">Previous</button>
+          <button class="btn btn-outline-success btn-sm" (click)="nextStep()">Next</button>
         </mat-action-row>
       </mat-expansion-panel>
 
@@ -77,8 +77,8 @@
         <mat-datepicker #picker></mat-datepicker> -->
 
         <mat-action-row>
-          <button mat-button color="warn" (click)="prevStep()">Previous</button>
-          <button mat-button color="primary" (click)="nextStep()">End</button>
+          <button class="btn btn-light btn-sm" (click)="prevStep()">Previous</button>
+          <button class="btn btn-outline-success btn-sm" (click)="nextStep()">Next</button>
         </mat-action-row>
       </mat-expansion-panel>
     </mat-accordion>
@@ -87,7 +87,7 @@
 <div class="modal-footer">
   <button
     type="button"
-    class="btn btn-outline-primary"
+    class="btn btn-outline-success"
     (click)="modal.close('Close click')"
   >
     Add
