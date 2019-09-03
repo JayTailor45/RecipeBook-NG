@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {}
 
   open() {
-    const modalRef = this.modal.open(RecipeAddEditModalComponent, { size: 'lg', scrollable: true /*, centered: true */ });
+    const modalRef = this.modal.open(RecipeAddEditModalComponent, { size: 'lg', scrollable: true /*, centered: true */, backdrop: 'static' });
     modalRef.componentInstance.name = {};
   }
 

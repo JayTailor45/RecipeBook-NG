@@ -81,6 +81,38 @@
           <button class="btn btn-outline-success btn-sm" (click)="nextStep()">Next</button>
         </mat-action-row>
       </mat-expansion-panel>
+
+      <mat-expansion-panel
+        [expanded]="step === 3"
+        (opened)="setStep(3)"
+        hideToggle
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Metadata
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-action-row>
+          <button class="btn btn-light btn-sm" (click)="prevStep()">Previous</button>
+          <button class="btn btn-outline-success btn-sm" (click)="nextStep()">Next</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel
+        [expanded]="step === 4"
+        (opened)="setStep(4)"
+        hideToggle
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Preview
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-action-row>
+          <button class="btn btn-light btn-sm" (click)="prevStep()">Previous</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
     </mat-accordion>
   </div>
 </div>
