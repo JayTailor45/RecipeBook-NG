@@ -11,4 +11,14 @@
     width: 48%;
     float: right;
   }
+  .image-crop-container {
+    display: flex;
+    .image-cropper {
+      width: 70%;
+    }
+    .cropped-image {
+      margin-left: 15px;
+      align-self: center;
+    }
+  }
 }

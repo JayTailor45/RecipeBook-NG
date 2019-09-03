@@ -10,6 +10,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MarkdownModule } from 'ngx-markdown';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 import {
   FontAwesomeModule,
@@ -58,7 +59,8 @@ import { RecipeAddEditModalComponent } from './common/recipe-add-edit-modal/reci
     MatExpansionModule,
     MatIconModule,
     MatDatepickerModule,
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    ImageCropperModule
   ],
   entryComponents : [
     RecipeAddEditModalComponent

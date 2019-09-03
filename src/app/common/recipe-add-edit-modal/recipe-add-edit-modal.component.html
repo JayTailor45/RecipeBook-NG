@@ -76,18 +76,25 @@
             Image
           </mat-panel-title>
         </mat-expansion-panel-header>
-
-        <!-- <mat-form-field>
-          <input
-            matInput
-            placeholder="Date"
-            [matDatepicker]="picker"
-            (focus)="picker.open()"
-            readonly
-          />
-        </mat-form-field>
-        <mat-datepicker #picker></mat-datepicker> -->
-
+        <input type="file" (change)="fileChangeEvent($event)" />
+        <div class="image-crop-container">
+          <div class="image-cropper">
+            <image-cropper
+              [imageChangedEvent]="imageChangedEvent"
+              [maintainAspectRatio]="true"
+              [aspectRatio]="4 / 3"
+              [resizeToWidth]="215"
+              format="png"
+              (imageCropped)="imageCropped($event)"
+              (imageLoaded)="imageLoaded()"
+              (cropperReady)="cropperReady()"
+              (loadImageFailed)="loadImageFailed()"
+            ></image-cropper>
+          </div>
+          <div class="cropped-image">
+            <img [src]="croppedImage" />
+          </div>
+        </div>
         <mat-action-row>
           <button class="btn btn-light btn-sm" (click)="prevStep()">
             Previous
