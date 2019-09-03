@@ -2,7 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MarkdownModule } from 'ngx-markdown';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import {
   FontAwesomeModule,
@@ -60,7 +62,10 @@ import { RecipeAddEditModalComponent } from './common/recipe-add-edit-modal/reci
     MatIconModule,
     MatDatepickerModule,
     MarkdownModule.forRoot(),
-    ImageCropperModule
+    ImageCropperModule,
+    MatChipsModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ],
   entryComponents : [
     RecipeAddEditModalComponent
