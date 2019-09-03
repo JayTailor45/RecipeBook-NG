@@ -8,6 +8,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class RecipeAddEditModalComponent implements OnInit {
   @Input() obj;
   step = 0;
+  markdown = '';
   constructor(public modal: NgbActiveModal) { }
 
   ngOnInit() {

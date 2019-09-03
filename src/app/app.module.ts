@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MarkdownModule } from 'ngx-markdown';
 
 import {
   FontAwesomeModule,
@@ -56,7 +57,8 @@ import { RecipeAddEditModalComponent } from './common/recipe-add-edit-modal/reci
     MatInputModule,
     MatExpansionModule,
     MatIconModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MarkdownModule.forRoot()
   ],
   entryComponents : [
     RecipeAddEditModalComponent

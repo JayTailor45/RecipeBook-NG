@@ -28,7 +28,9 @@
         </mat-form-field>
 
         <mat-action-row>
-          <button class="btn btn-outline-success btn-sm" (click)="nextStep()">Next</button>
+          <button class="btn btn-outline-success btn-sm" (click)="nextStep()">
+            Next
+          </button>
         </mat-action-row>
       </mat-expansion-panel>
 
@@ -43,14 +45,24 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
 
-        <mat-form-field>
-            <!-- TODO: Add markdown editor and viewer here-->
-            <input matInput placeholder="Country" />
+        <mat-form-field class="markdown-input">
+          <textarea
+            matInput
+            placeholder="Description"
+            [(ngModel)]="markdown"
+          ></textarea>
         </mat-form-field>
+        <div class="markdown-container">
+          <markdown matInput [data]="markdown"></markdown>
+        </div>
 
         <mat-action-row>
-          <button class="btn btn-light btn-sm" (click)="prevStep()">Previous</button>
-          <button class="btn btn-outline-success btn-sm" (click)="nextStep()">Next</button>
+          <button class="btn btn-light btn-sm" (click)="prevStep()">
+            Previous
+          </button>
+          <button class="btn btn-outline-success btn-sm" (click)="nextStep()">
+            Next
+          </button>
         </mat-action-row>
       </mat-expansion-panel>
 
@@ -77,8 +89,12 @@
         <mat-datepicker #picker></mat-datepicker> -->
 
         <mat-action-row>
-          <button class="btn btn-light btn-sm" (click)="prevStep()">Previous</button>
-          <button class="btn btn-outline-success btn-sm" (click)="nextStep()">Next</button>
+          <button class="btn btn-light btn-sm" (click)="prevStep()">
+            Previous
+          </button>
+          <button class="btn btn-outline-success btn-sm" (click)="nextStep()">
+            Next
+          </button>
         </mat-action-row>
       </mat-expansion-panel>
 
@@ -93,8 +109,12 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-action-row>
-          <button class="btn btn-light btn-sm" (click)="prevStep()">Previous</button>
-          <button class="btn btn-outline-success btn-sm" (click)="nextStep()">Next</button>
+          <button class="btn btn-light btn-sm" (click)="prevStep()">
+            Previous
+          </button>
+          <button class="btn btn-outline-success btn-sm" (click)="nextStep()">
+            Next
+          </button>
         </mat-action-row>
       </mat-expansion-panel>
 
@@ -109,10 +129,11 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-action-row>
-          <button class="btn btn-light btn-sm" (click)="prevStep()">Previous</button>
+          <button class="btn btn-light btn-sm" (click)="prevStep()">
+            Previous
+          </button>
         </mat-action-row>
       </mat-expansion-panel>
-
     </mat-accordion>
   </div>
 </div>
