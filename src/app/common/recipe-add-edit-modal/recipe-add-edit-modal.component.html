@@ -129,7 +129,7 @@
             </mat-chip>
             <input
               placeholder="Tags..."
-              #chipInput
+              #tagChipInput
               [formControl]="tagCtrl"
               [matAutocomplete]="autoTags"
               [matChipInputFor]="tagChipList"
@@ -148,6 +148,39 @@
           </mat-autocomplete>
         </mat-form-field>
         <!-- Tag chips over -->
+        <!-- Category chips -->
+        <mat-form-field style="width: 100%">
+            <mat-chip-list #catChipList aria-label="Category selection">
+              <mat-chip
+                *ngFor="let cat of cats"
+                [selectable]="selectable"
+                [removable]="removable"
+                (removed)="catRemove(cat)"
+              >
+                {{ cat }}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input
+                placeholder="Categories..."
+                #catChipInput
+                [formControl]="catCtrl"
+                [matAutocomplete]="autoCats"
+                [matChipInputFor]="catChipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur"
+                (matChipInputTokenEnd)="catAdd($event)"
+              />
+            </mat-chip-list>
+            <mat-autocomplete
+              #autoCats="matAutocomplete"
+              (optionSelected)="catSelected($event)"
+            >
+              <mat-option *ngFor="let cat of filteredCats | async" [value]="cat">
+                {{ cat }}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <!-- Tag chips over -->
         <mat-action-row>
           <button class="btn btn-light btn-sm" (click)="prevStep()">
             Previous

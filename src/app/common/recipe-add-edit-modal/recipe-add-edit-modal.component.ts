@@ -18,16 +18,18 @@ import { MatChipInputEvent } from "@angular/material/chips";
 })
 export class RecipeAddEditModalComponent implements OnInit {
   @Input() obj;
-
-  @ViewChild("chipInput", { static: false }) chipInput: ElementRef<
-    HTMLInputElement
-  >;
-  @ViewChild("autoTags", { static: false }) matAutoTagscomplete: MatAutocomplete;
-
+  
+  // for Images
   step = 0;
   markdown = "";
   imageChangedEvent: any = "";
   croppedImage: any = "";
+  
+  // for Tags
+  @ViewChild("tagChipInput", { static: false }) chipInput: ElementRef<
+    HTMLInputElement
+  >;
+  @ViewChild("autoTags", { static: false }) matAutoTagscomplete: MatAutocomplete;
 
   visible = true;
   selectable = true;
@@ -39,11 +41,29 @@ export class RecipeAddEditModalComponent implements OnInit {
   tags: string[] = ["Lemon"];
   allTags: string[] = ["Apple", "Lemon", "Lime", "Orange", "Strawberry"];
 
+  // for Categories
+  @ViewChild("catChipInput", { static: false }) catInput: ElementRef<
+    HTMLInputElement
+  >;
+  @ViewChild("autoCats", { static: false }) matAutoCatscomplete: MatAutocomplete;
+
+  catCtrl = new FormControl();
+  filteredCats: Observable<string[]>;
+  cats: string[] = ["Lemon"];
+  allCats: string[] = ["Apple", "Lemon", "Lime", "Orange", "Strawberry"];
+
   constructor(public modal: NgbActiveModal) {
     this.filteredTags = this.tagCtrl.valueChanges.pipe(
       startWith(null),
       map((tag: string | null) =>
         tag ? this._filter(tag) : this.allTags.slice()
+      )
+    );
+
+    this.filteredCats = this.catCtrl.valueChanges.pipe(
+      startWith(null),
+      map((cat: string | null) =>
+        cat ? this._cat_filter(cat) : this.allCats.slice()
       )
     );
   }
@@ -94,12 +114,9 @@ export class RecipeAddEditModalComponent implements OnInit {
    *
    */
   add(event: MatChipInputEvent): void {
-    // Add fruit only when MatAutocomplete is not open
-    // To make sure this does not conflict with OptionSelected Event
     if (!this.matAutoTagscomplete.isOpen) {
       const input = event.input;
       const tag = event.value;
-      // Add our tag
       if ((tag || "").trim()) {
         this.tags.push(tag.trim());
       }
@@ -127,6 +144,45 @@ export class RecipeAddEditModalComponent implements OnInit {
     const filterValue = value.toLowerCase();
     return this.allTags.filter(
       tag => tag.toLowerCase().indexOf(filterValue) === 0
+    );
+  }
+
+  /*
+   *
+   * Categories cips
+   *
+   */
+  catAdd(event: MatChipInputEvent): void {
+    if (!this.matAutoCatscomplete.isOpen) {
+      const input = event.input;
+      const cat = event.value;
+      if ((cat || "").trim()) {
+        this.cats.push(cat.trim());
+      }
+      if (input) {
+        input.value = "";
+      }
+      this.catCtrl.setValue(null);
+    }
+  }
+
+  catRemove(cat: string): void {
+    const index = this.cats.indexOf(cat);
+    if (index >= 0) {
+      this.cats.splice(index, 1);
+    }
+  }
+
+  catSelected(event: MatAutocompleteSelectedEvent): void {
+    this.cats.push(event.option.viewValue);
+    this.catInput.nativeElement.value = "";
+    this.catCtrl.setValue(null);
+  }
+
+  private _cat_filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.allCats.filter(
+      cat => cat.toLowerCase().indexOf(filterValue) === 0
     );
   }
 }
