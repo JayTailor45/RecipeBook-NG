@@ -46,5 +46,9 @@ export class AuthService {
         return true;
       }
     }
+
+  getCurrentUser() {
+    return this.userDetails.uid;
+  }
   
 }

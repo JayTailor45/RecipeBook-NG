@@ -13,6 +13,8 @@ import { MarkdownModule } from 'ngx-markdown';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import {
   FontAwesomeModule,
@@ -65,7 +67,9 @@ import { RecipeAddEditModalComponent } from './common/recipe-add-edit-modal/reci
     ImageCropperModule,
     MatChipsModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   entryComponents : [
     RecipeAddEditModalComponent

@@ -10,6 +10,7 @@ import { FormControl } from "@angular/forms";
 import { Observable } from "rxjs";
 import { startWith, map, tap } from "rxjs/operators";
 import { MatChipInputEvent } from "@angular/material/chips";
+import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
   selector: "app-recipe-add-edit-modal",
@@ -24,6 +25,15 @@ export class RecipeAddEditModalComponent implements OnInit {
   markdown = "";
   imageChangedEvent: any = "";
   croppedImage: any = "";
+
+  objToSend = {
+    author: '',
+    name: '',
+    description: '',
+    image: null,
+    categories: [],
+    tags: []
+  };
   
   // for Tags
   @ViewChild("tagChipInput", { static: false }) chipInput: ElementRef<
@@ -52,7 +62,7 @@ export class RecipeAddEditModalComponent implements OnInit {
   cats: string[] = ["Lemon"];
   allCats: string[] = ["Apple", "Lemon", "Lime", "Orange", "Strawberry"];
 
-  constructor(public modal: NgbActiveModal) {
+  constructor(public modal: NgbActiveModal, private RecipeService: RecipeService) {
     this.filteredTags = this.tagCtrl.valueChanges.pipe(
       startWith(null),
       map((tag: string | null) =>
@@ -80,6 +90,7 @@ export class RecipeAddEditModalComponent implements OnInit {
   }
   imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;
+    this.objToSend.image = event.file;
   }
   imageLoaded() {
     // show cropper
@@ -184,5 +195,14 @@ export class RecipeAddEditModalComponent implements OnInit {
     return this.allCats.filter(
       cat => cat.toLowerCase().indexOf(filterValue) === 0
     );
+  }
+  
+  submitRecipe() {
+    // Set remaining fields
+    this.objToSend.description = this.markdown;
+    this.objToSend.tags = this.tags;
+    this.objToSend.categories = this.cats;
+
+    this.RecipeService.addRecipe(this.objToSend);    
   }
 }

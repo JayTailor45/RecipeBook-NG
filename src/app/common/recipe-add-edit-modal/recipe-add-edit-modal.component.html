@@ -23,7 +23,7 @@
         </mat-expansion-panel-header>
 
         <mat-form-field class="full-input">
-          <input matInput placeholder="Recipe name" />
+          <input matInput [(ngModel)]="objToSend.name" placeholder="Recipe name" />
         </mat-form-field>
 
         <mat-action-row>
@@ -213,7 +213,7 @@
   <button
     type="button"
     class="btn btn-outline-success"
-    (click)="modal.close()"
+    (click)="submitRecipe()"
   >
     Add
   </button>
