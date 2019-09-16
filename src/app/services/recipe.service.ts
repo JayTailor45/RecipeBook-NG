@@ -26,13 +26,19 @@ export class RecipeService {
 
     task
       .then(() => {
-        recipe.image = "/images/recipe_" + uniqueImageName;
-        this.db
-          .collection("recipes")
-          .add(recipe)
-          .then(() => {})
-          .catch((e) => {console.log(e.message)});
+        storegeRef.getDownloadURL().subscribe(gotName => {
+          recipe.image = gotName;
+          this.db
+            .collection("recipes")
+            .add(recipe)
+            .then(() => {})
+            .catch(e => {
+              console.log(e.message);
+            });
+        });
       })
-      .catch((e) => {console.log(e.message)});
+      .catch(e => {
+        console.log(e.message);
+      });
   }
 }
