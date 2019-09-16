@@ -35,6 +35,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RecipeAddEditModalComponent } from './common/recipe-add-edit-modal/recipe-add-edit-modal.component';
+import { SpecialRemoverPipe } from './services/special-remover.pipe';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { RecipeAddEditModalComponent } from './common/recipe-add-edit-modal/reci
     LoginComponent, 
     PageNotFoundComponent, 
     DashboardComponent, 
-    RecipeAddEditModalComponent
+    RecipeAddEditModalComponent, SpecialRemoverPipe
   ],
   imports: [
     BrowserModule, 
