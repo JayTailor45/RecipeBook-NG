@@ -36,6 +36,7 @@ import { PageNotFoundComponent } from './common/page-not-found/page-not-found.co
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RecipeAddEditModalComponent } from './common/recipe-add-edit-modal/recipe-add-edit-modal.component';
 import { SpecialRemoverPipe } from './services/special-remover.pipe';
+import { RecipeComponent } from './recipe/recipe.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { SpecialRemoverPipe } from './services/special-remover.pipe';
     LoginComponent, 
     PageNotFoundComponent, 
     DashboardComponent, 
-    RecipeAddEditModalComponent, SpecialRemoverPipe
+    RecipeAddEditModalComponent, SpecialRemoverPipe, RecipeComponent
   ],
   imports: [
     BrowserModule, 

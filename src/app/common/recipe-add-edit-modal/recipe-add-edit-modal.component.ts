@@ -7,7 +7,7 @@ import {
 } from "@angular/material/autocomplete";
 import { ENTER, COMMA } from "@angular/cdk/keycodes";
 import { FormControl } from "@angular/forms";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 import { startWith, map, tap } from "rxjs/operators";
 import { MatChipInputEvent } from "@angular/material/chips";
 import { RecipeService } from 'src/app/services/recipe.service';

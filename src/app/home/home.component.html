@@ -10,7 +10,7 @@
           <h3 class="mb-0">{{item.name}}</h3>
           <div class="mb-1 text-muted">Oct 10</div>
           <p class="card-text mb-auto">{{item.description | specialRemover}}</p>
-          <a class="stretched-link">Continue reading</a>
+          <a class="stretched-link" [routerLink]="['/recipe/' + item.id]">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block">
           <img style="min-height:100%;" [src]="item.image">
