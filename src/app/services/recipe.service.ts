@@ -15,7 +15,9 @@ export class RecipeService {
     private AuthService: AuthService,
     private storage: AngularFireStorage
   ) {
-    this.recipes = this.db.collection("recipes").valueChanges({idField: 'id'});
+    this.recipes = this.db
+      .collection("recipes")
+      .valueChanges({ idField: "id" });
   }
 
   addRecipe(recipe) {
@@ -40,5 +42,10 @@ export class RecipeService {
       .catch(e => {
         console.log(e.message);
       });
+  }
+
+  getRecipe(id) {
+    const ref = this.db.collection("recipes").doc(id);
+    return ref.get();
   }
 }

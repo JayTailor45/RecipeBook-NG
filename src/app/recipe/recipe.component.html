@@ -1,1 +1,18 @@
-<p>recipe works!</p>
+<div class="recipe-container container">
+  <div class="card" *ngIf="data && !loading">
+    <div class="recipe">
+      <h4 class="card-header">{{ data.categories }}</h4>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ data.name }}
+      </h5>
+      <p class="card-text">
+        {{ data.description }}
+      </p>
+    </div>
+  </div>
+  <div class="loading" *ngIf="!data && loading">
+    <h2>Loading...</h2>
+  </div>
+</div>
