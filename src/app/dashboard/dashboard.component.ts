@@ -35,6 +35,9 @@ export class DashboardComponent implements OnInit {
           const newVal = x[el].description.replace(/[^\w\s]/gi, "").trim();
           x[el].description = newVal.charAt(0).toUpperCase() + newVal.slice(1);
         }
+        if (x[el]) {
+          x[el].actions = x[el].id; 
+        }
       }
       this.dataSource = x;
     });
