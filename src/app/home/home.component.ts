@@ -7,8 +7,11 @@ import { RecipeService } from '../services/recipe.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  recipes: any;
 
-  constructor(private RecipeService: RecipeService) { }
+  constructor(private RecipeService: RecipeService) { 
+    this.recipes = this.RecipeService.getTwoRecipes().valueChanges()
+  }
 
   ngOnInit() {
   }

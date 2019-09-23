@@ -14,11 +14,7 @@ export class RecipeService {
     private db: AngularFirestore,
     private AuthService: AuthService,
     private storage: AngularFireStorage
-  ) {
-    this.recipes = this.db
-      .collection("recipes")
-      .valueChanges({ idField: "id" });
-  }
+  ) { }
 
   addRecipe(recipe) {
     recipe.author = this.AuthService.getCurrentUser();
@@ -47,5 +43,9 @@ export class RecipeService {
   getRecipe(id) {
     const ref = this.db.collection("recipes").doc(id);
     return ref.get();
+  }
+
+  getTwoRecipes() {
+    return this.db.collection("recipes", ref => ref.limit(2));
   }
 }
