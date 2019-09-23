@@ -30,6 +30,12 @@ export class DashboardComponent implements OnInit {
 
   constructor(private DashboardService: DashboardService) {
     this.DashboardService.recipes.subscribe(x => {
+      for (let el = 0; el < x.length; el++) {
+        if (x[el].description) {
+          const newVal = x[el].description.replace(/[^\w\s]/gi, "").trim();
+          x[el].description = newVal.charAt(0).toUpperCase() + newVal.slice(1);
+        }
+      }
       this.dataSource = x;
     });
   }
