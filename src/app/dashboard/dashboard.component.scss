@@ -28,7 +28,7 @@ tr.example-element-row:not(.example-expanded-row):active {
   padding: 8px;
   margin: 8px 0;
   img {
-    width: 34vh;
+    width: 15vw;
   }
 }
 
@@ -46,6 +46,11 @@ tr.example-element-row:not(.example-expanded-row):active {
 
 .dashboard-container {
   min-height: 85vh;
+  .example-element-controls {
+    max-width: 20vw;
+    min-width: 20vw;
+    padding: 16px;
+  }
 }
 
 .example-element-description-attribution {

@@ -1,0 +1,17 @@
+<div class="selector">
+  <mat-form-field>
+    <mat-label>Blog status</mat-label>
+    <mat-select
+      [(ngModel)]="selectedStatus"
+      (ngModelChange)="updatePostStatus($event)"
+    >
+      <mat-option *ngFor="let status of blogStatus" [value]="status.value">
+        {{ status.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="button-container">
+  <button mat-stroked-button color="primary">Edit</button>
+  <button mat-button color="warn">Delete</button>
+</div>

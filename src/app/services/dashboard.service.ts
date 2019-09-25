@@ -15,4 +15,10 @@ export class DashboardService {
       .collection("recipes")
       .valueChanges({ idField: "id" });
   }
+
+  updatePostStatus(id, status) {
+    this.db.collection('recipes').doc(id).update({status: status})
+      .then(res => console.log(res))
+      .catch(e => console.log(e))
+  }
 }

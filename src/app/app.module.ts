@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
@@ -38,6 +39,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RecipeAddEditModalComponent } from './common/recipe-add-edit-modal/recipe-add-edit-modal.component';
 import { SpecialRemoverPipe } from './services/special-remover.pipe';
 import { RecipeComponent } from './recipe/recipe.component';
+import { MatButtonModule } from '@angular/material/button';
+import { PostControllerComponent } from './common/post-controller/post-controller.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,7 @@ import { RecipeComponent } from './recipe/recipe.component';
     LoginComponent, 
     PageNotFoundComponent, 
     DashboardComponent, 
-    RecipeAddEditModalComponent, SpecialRemoverPipe, RecipeComponent
+    RecipeAddEditModalComponent, SpecialRemoverPipe, RecipeComponent, PostControllerComponent
   ],
   imports: [
     BrowserModule, 
@@ -73,7 +76,9 @@ import { RecipeComponent } from './recipe/recipe.component';
     ReactiveFormsModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule,
+    MatSelectModule
   ],
   entryComponents : [
     RecipeAddEditModalComponent

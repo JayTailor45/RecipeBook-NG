@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
           x[el].description = newVal.charAt(0).toUpperCase() + newVal.slice(1);
         }
         if (x[el]) {
-          x[el].actions = x[el].id; 
+          x[el].actions = x[el].id;
         }
       }
       this.dataSource = x;
